@@ -14,11 +14,18 @@ type Client struct {
 	Endereco Endereco
 }
 
+func (c Client) toggleAtivar() {
+	c.Ativo = !c.Ativo
+}
+
 func main() {
 	pessoa := Client{
 		Nome:  "Wesley",
 		Idade: 30,
 		Ativo: true,
 	}
+	pessoa.toggleAtivar()
+	fmt.Println(pessoa.Ativo)
+
 	fmt.Println(pessoa.Nome)
 }
